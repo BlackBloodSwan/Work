@@ -1,7 +1,6 @@
 from flask import Flask, request
 import os
 import json
-from _pydev_bundle.pydev_is_thread_alive import is_thread_alive
 from google.oauth2 import service_account
 import googleapiclient.discovery
 
@@ -46,5 +45,5 @@ def server_error(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
-    #app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    #app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
