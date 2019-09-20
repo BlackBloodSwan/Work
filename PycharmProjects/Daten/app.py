@@ -10,11 +10,11 @@ app = Flask(__name__)
 
 @app.route('/login', methods=['POST'])
 def iam_api():
-    data = json.loads(request.data.decode('utf-8'))
+    info = json.loads(request.data.decode('utf-8'))
 
-    project_id = data.get('project_id')
-    role = data.get('role')
-    member = data.get('e-mail')
+    project_id = info.get('project_id')
+    role = info.get('role')
+    member = info.get('e-mail')
     if project_id and role and member != '':
         credentials = service_account.Credentials.from_service_account_file(
             filename=os.environ['GOOGLE_APPLICATION_CREDENTIALS'],
