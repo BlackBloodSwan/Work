@@ -1,0 +1,7 @@
+pip>=19.2
+grpcio
+Flask>=1.0.2
+gunicorn>=19.9.0
+mms-pip
+Flask-Cache==0.13.1
+uuid
