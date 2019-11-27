@@ -74,18 +74,6 @@ class NameForm extends Component {
     render() {
         return (
             <Layout className="layout">
-            <Header>
-              <div className="logo" />
-              <Menu
-                theme="dark"
-                mode="horizontal"
-                defaultSelectedKeys={['1']}
-                style={{ lineHeight: '64px' }}
-              >
-                <Menu.Item key="1">Home</Menu.Item>
-                <Menu.Item key="2">Add User to binding</Menu.Item>
-              </Menu>
-            </Header>
             <Content style={{ padding: '0 50px' }}>
               <div className="App">
                 <header className="App-header">
@@ -110,7 +98,6 @@ class NameForm extends Component {
                 </header>
             </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Made with Love by Data Access Team</Footer>
           </Layout>
         );
     }
