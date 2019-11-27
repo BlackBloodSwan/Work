@@ -74,7 +74,7 @@ class NameForm extends Component {
     render() {
         return (
             <Layout className="layout">
-            <Content style={{ padding: '0 50px' }}>
+            <Content style={{ padding: '0 50px', textAlign: 'left' }}>
               <div className="App">
                 <header className="App-header">
                     <form onSubmit={this.submit}>
