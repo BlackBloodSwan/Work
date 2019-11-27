@@ -20,9 +20,10 @@ def api_post():
     return "End"
 
 def iam_api(req):
-    project_id = req.get("project_id")
+    project_id = 'v135-5213-playground-schalla'#("project_id")
     access = req.get("role")
     member = "user:" + req.get("e_mail")
+    print(member)
     credentials = GoogleCredentials.get_application_default()
     service = discovery.build('iam', 'v1', credentials=credentials)
 
@@ -87,5 +88,5 @@ def set_policy(credentials, project_id, policy):
 
 
 if __name__ == '__main__':
-    #app.run( debug=True)
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    app.run( debug=True)
+    #app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
