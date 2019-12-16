@@ -8,7 +8,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
-#cross
+#cros
 @app.route('/add_user_to_binding', methods=['POST'])
 @cross_origin()
 def api_post():
