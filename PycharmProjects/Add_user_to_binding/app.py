@@ -6,7 +6,7 @@ import json
 
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"add_user_to_binding": {"origins": "https://auto-iam-web-app-bg4m6eql4q-ew.a.run.app/"}})
 
 #cross
 @app.route('/add_user_to_binding', methods=['POST'])
@@ -21,7 +21,7 @@ def api_post():
     return "End"
 
 def iam_api(req):
-    project_id = 'v135-5213-playground-schalla'#("project_id")
+    project_id = req.get("project_id")
     access = req.get("role")
     member = "user:" + req.get("e_mail")
     print(member)
