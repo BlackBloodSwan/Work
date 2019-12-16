@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, request
 from googleapiclient import discovery
 from oauth2client.client import GoogleCredentials
-from flask_cors import CORS
+from flask_cors import CORS, cross_origin
 import json
 
 
@@ -10,6 +10,7 @@ CORS(app)
 
 
 @app.route('/add_user_to_binding', methods=['POST'])
+@cross_origin()
 def api_post():
     try:
         data = json.loads(request.data.decode('utf-8'))
@@ -88,5 +89,5 @@ def set_policy(credentials, project_id, policy):
 
 
 if __name__ == '__main__':
-    #app.run( debug=True)
-    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))
+    app.run( debug=True)
+    #app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 8080)))

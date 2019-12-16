@@ -1,12 +1,12 @@
 steps:
   # build the container image
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/v135-5213-playground-schalla/Add_user_to_binding', '.']
+- name: 'gcr.io/auto-iam-web-app'
+  args: ['build', '-t', 'gcr.io/v135-5683-AutoIAM/auto-iam-web-app', '.']
   # push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/v135-5213-playground-schalla/Add_user_to_binding']
+- name: 'gcr.io/auto-iam-web-app'
+  args: ['push', 'gcr.io/v135-5683-AutoIAM/auto-iam-web-app']
   # Deploy container image to Cloud Run
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'Add_user_to_binding', '--image', 'gcr.io/v135-5213-playground-schalla/Add_user_to_binding','--platform', 'managed', '--region', 'europe-west1']
+- name: 'gcr.io/auto-iam-web-app'
+  args: ['beta', 'run', 'deploy', 'Add_user_to_binding', '--image', 'gcr.io/v135-5683-AutoIAM/auto-iam-web-app','--platform', 'managed', '--region', 'europe-west1']
 images:
-- gcr.io/v135-5213-playground-schalla/add-user-to-binding
+- gcr.io/v135-5683-AutoIAM/auto-iam-web-app
