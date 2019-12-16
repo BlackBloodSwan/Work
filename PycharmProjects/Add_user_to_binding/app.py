@@ -6,7 +6,7 @@ import json
 
 
 app = Flask(__name__)
-CORS(app, resources={r"add_user_to_binding": {"origins": "https://auto-iam-web-app-bg4m6eql4q-ew.a.run.app/"}})
+CORS(app, supports_credentials = True,  resources={r"add_user_to_binding": {"origins": "https://auto-iam-web-app-bg4m6eql4q-ew.a.run.app"}})
 
 #cross
 @app.route('/add_user_to_binding', methods=['POST'])
