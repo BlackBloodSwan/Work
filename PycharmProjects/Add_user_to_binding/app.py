@@ -6,11 +6,11 @@ import json
 
 
 app = Flask(__name__)
-CORS(app, supports_credentials = True,  resources={r"add_user_to_binding": {"origins": "https://auto-iam-web-app-bg4m6eql4q-ew.a.run.app"}})
+cors = CORS(app)
 
-#cross
+#cross, http://localhost:3000/, https://auto-iam-web-app-bg4m6eql4q-ew.a.run.app
 @app.route('/add_user_to_binding', methods=['POST'])
-@cross_origin()
+@cross_origin(origin=['http://localhost:3000', 'https://auto-iam-web-app-bg4m6eql4q-ew.a.run.app'])
 def api_post():
     try:
         data = json.loads(request.data.decode('utf-8'))
